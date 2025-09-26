@@ -1,11 +1,7 @@
-FROM prom/prometheus
+FROM prom/prometheus:latest
 
-# copy the Prometheus configuration file
-COPY prometheus.yml /etc/prometheus/prometheus.yml
+ADD prometheus.yml /etc/prometheus/
 
-# expose the Prometheus server port
 EXPOSE 9090
 
-# set the entrypoint command
 USER root
- 
